@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dungeon Name Generator — LinkedWriter</title>
+<meta name="description" content="Generate dungeon, crypt, and ruin names for tabletop RPGs. Free, instant, no sign-up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What makes a good dungeon name?","acceptedAnswer":{"@type":"Answer","text":"A strong dungeon name usually implies a threat or a story before the party ever sets foot inside — a structure, a condition, and often a specific horror attached to it."}},
+    {"@type":"Question","name":"Can I generate a name without the theme phrase?","acceptedAnswer":{"@type":"Answer","text":"Some results are generated without a theme phrase for a shorter, punchier name — press the seal again if you want a different mix."}},
+    {"@type":"Question","name":"Is this generator only for D&D?","acceptedAnswer":{"@type":"Answer","text":"No, the names work for any tabletop system, video game level design, or fiction that needs a dungeon, crypt, or ruin name."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site">
+  <a class="wordmark" href="index.html">Linked<span class="amp">Writer</span></a>
+  <p class="tagline">A grimoire of names for worlds not yet written.</p>
+</header>
+
+<div class="shell">
+  <nav class="spine" id="spine">
+    <a class="tab" href="dnd-character-names.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.6 5.9L21 9l-4.8 4.2L17.4 20 12 16.6 6.6 20l1.2-6.8L3 9l6.4-1.1L12 2z"/></svg>
+      <span class="chp">I.</span> Character Names
+    </a>
+    <a class="tab" href="realm-map-names.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3l6 2 6-2v16l-6 2-6-2-6 2V5l6-2z"/><path d="M9 3v16M15 5v16"/></svg>
+      <span class="chp">II.</span> Realm &amp; Map Names
+    </a>
+    <a class="tab active" href="dungeon-names.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V10l8-7 8 7v11"/><path d="M9 21v-6h6v6"/></svg>
+      <span class="chp">III.</span> Dungeon Names
+    </a>
+    <a class="tab" href="dungeon-maps.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 5-5 2 2-5 5-2z" fill="currentColor" stroke="none"/></svg>
+      <span class="chp">IV.</span> Dungeon Maps
+    </a>
+    <a class="tab" href="tavern-names.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h16l-1.5 12h-13L4 8z"/><path d="M8 8V5a4 4 0 0 1 8 0v3"/></svg>
+      <span class="chp">V.</span> Tavern Names
+    </a>
+    <a class="tab" href="race-clan-names.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c1.6-4 4.2-6 7.5-6s5.9 2 7.5 6"/></svg>
+      <span class="chp">VI.</span> Race &amp; Clan Names
+    </a>
+  </nav>
+
+  <main>
+    <p class="eyebrow">Chapter III · For Crypts, Vaults, and Things Best Left Buried</p>
+    <h1 class="page-title">Dungeon Name Generator</h1>
+    <p class="lede">A good dungeon name is half the pitch. This forges names for the crawl, crypt, or ruin your party is about to regret entering — the kind of name that shows up on a tavern rumor board and empties the room.</p>
+
+    <div class="parchment">
+      <div class="field-row">
+        <div class="field">
+          <label for="dungeon-count">How many</label>
+          <select id="dungeon-count">
+            <option>3</option><option>5</option><option>8</option>
+          </select>
+        </div>
+        <button class="seal-btn" onclick="genDungeon()">Draw<br>Names</button>
+      </div>
+      <div class="results" id="dungeon-results">
+        <hr class="divider">
+        <p class="empty-note">Press the seal to draw your first names.</p>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h2 class="section-title">How to use it</h2>
+      <p>Press the seal to draw a batch of names, each combining a structural word (crypt, vault, warren, keep) with a condition and, often, a specific theme phrase describing what's actually down there. Draw several at once and keep the ones that fit — the theme phrase is easy to drop if you want something shorter for a passing mention rather than a full dungeon crawl.</p>
+      <h2 class="section-title">Tips for using a dungeon name well</h2>
+      <ul>
+        <li>Drop the theme phrase for a location your players will only hear about in passing — the shorter name reads more naturally in dialogue.</li>
+        <li>Keep the full name (with theme) for the dungeon they're actually about to enter, since it doubles as a hook.</li>
+        <li>A name that sounds slightly too specific ("of the Ash Serpent") often does more worldbuilding work than a generic one, even if you never explain it directly.</li>
+      </ul>
+    </div>
+
+    <div class="faq">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq-item">
+        <h3>What makes a good dungeon name?</h3>
+        <p>A strong dungeon name usually implies a threat or a story before the party ever sets foot inside — a structure, a condition, and often a specific horror attached to it.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I generate a name without the theme phrase?</h3>
+        <p>Some results are generated without a theme phrase for a shorter, punchier name — press the seal again if you want a different mix.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this generator only for D&D?</h3>
+        <p>No, the names work for any tabletop system, video game level design, or fiction that needs a dungeon, crypt, or ruin name.</p>
+      </div>
+    </div>
+
+    <div class="related">
+      <h2>Someone has to go in</h2>
+      <div class="related-grid">
+        <a class="related-card" href="dnd-character-names.html"><span class="rc-title">Character Names →</span><span class="rc-sub">Name the fools brave enough</span></a>
+        <a class="related-card" href="realm-map-names.html"><span class="rc-title">Realm &amp; Map Names →</span><span class="rc-sub">Place the dungeon on your map</span></a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <p>LinkedWriter — free naming tools for tabletop games, fiction, and worldbuilding.</p>
+  <div class="foot-links">
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
