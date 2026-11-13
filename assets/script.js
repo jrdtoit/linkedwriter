@@ -82,6 +82,31 @@ function genTavern(){
   render(list, out);
 }
 
+
+/* ---------------- Tiefling Names ---------------- */
+const tiefling = {
+  infernal: { pre:['Zar','Meph','Bel','Aza','Lil','Mor','Vex','Kar','Nyx','Ash','Rav','Xan','Ser','Mal','Tor','Dae','Ibl','Zel'],
+              post:['iel','ath','or','is','eth','ara','ain','oth','eph','iel','gar','mir'],
+              epi:['the Ashen','Hellborn','the Unrepentant','Emberheart','the Twice-Named','Nightwhisper'] },
+  virtue:   { names:['Hope','Charity','Creed','Sorrow','Vengeance','Faith','Mercy','Fury','Grace','Valor','Patience','Wisdom','Freedom','Justice','Serenity','Ambition','Devotion','Courage','Truth','Redemption'] },
+  human:    { names:['Adrian','Alaric','Anselm','Aubrey','Benedict','Bram','Caspar','Cedric','Corin','Dorian','Edmund','Elias','Emrys','Felix','Gideon','Hugo','Jasper','Julian','Lucian','Marcus','Nathaniel','Osric','Percival','Quentin','Roland','Silas','Theodore','Tobias','Victor','Wendell','Amara','Beatrix','Celeste','Delia','Elowen','Fiona','Greta','Henrietta','Isolde','Josephine','Lydia','Mabel','Nadia','Odette','Marianne','Rosalind','Sable','Tamsin'] }
+};
+function genTiefling(){
+  const trad = document.getElementById('tiefling-tradition').value;
+  const n = +document.getElementById('tiefling-count').value;
+  const list = document.getElementById('tiefling-results');
+  const out = [];
+  for(let i=0;i<n;i++){
+    const key = trad==='any' ? pick(['infernal','virtue','human']) : trad;
+    if(key==='virtue'){ out.push(pick(tiefling.virtue.names)); continue; }
+    if(key==='human'){ out.push(pick(tiefling.human.names)); continue; }
+    const b = tiefling[key];
+    const name = cap(pick(b.pre)) + pick(b.post).toLowerCase();
+    out.push(key==='infernal' ? `${name} <em>"${pick(b.epi)}"</em>` : name);
+  }
+  render(list, out);
+}
+
 /* ---------------- Race / Clan Names ---------------- */
 const rPre = ['Ember','Frost','Shadow','Stone','Wind','Blood','Star','Moss','Dusk','Sun','Tide','Root','Ash','Bone'];
 const rSuf = ['kin','born','folk','walkers','wardens','children','touched','forged','blooded','tribe'];

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://linkedwriter.com/index.html</loc><priority>1.0</priority></url>
-  <url><loc>https://linkedwriter.com/dnd-character-names.html</loc><priority>0.9</priority></url>
-  <url><loc>https://linkedwriter.com/realm-map-names.html</loc><priority>0.9</priority></url>
-  <url><loc>https://linkedwriter.com/dungeon-names.html</loc><priority>0.9</priority></url>
-  <url><loc>https://linkedwriter.com/dungeon-maps.html</loc><priority>0.9</priority></url>
-  <url><loc>https://linkedwriter.com/tavern-names.html</loc><priority>0.9</priority></url>
-  <url><loc>https://linkedwriter.com/race-clan-names.html</loc><priority>0.9</priority></url>
-  <url><loc>https://linkedwriter.com/about.html</loc><priority>0.3</priority></url>
-  <url><loc>https://linkedwriter.com/privacy.html</loc><priority>0.1</priority></url>
-  <url><loc>https://linkedwriter.com/terms.html</loc><priority>0.1</priority></url>
+  <url><loc>https://www.linkedwriter.com/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://www.linkedwriter.com/dnd-character-names.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.linkedwriter.com/realm-map-names.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.linkedwriter.com/dungeon-names.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.linkedwriter.com/dungeon-maps.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.linkedwriter.com/tavern-names.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.linkedwriter.com/race-clan-names.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.linkedwriter.com/tiefling-names.html</loc><lastmod>2026-11-13</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.linkedwriter.com/about.html</loc><priority>0.3</priority></url>
+  <url><loc>https://www.linkedwriter.com/privacy.html</loc><priority>0.1</priority></url>
+  <url><loc>https://www.linkedwriter.com/terms.html</loc><priority>0.1</priority></url>
 </urlset>

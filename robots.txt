@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://linkedwriter.com/sitemap.xml
+Sitemap: https://www.linkedwriter.com/sitemap.xml
