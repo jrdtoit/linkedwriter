@@ -377,6 +377,22 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   html{ scroll-behavior:auto; }
 }
 
+/* ---------- Curated name lists (static, crawlable) ---------- */
+.name-list{
+  list-style:none; margin:0.6rem 0 0; padding:0;
+  columns:2; column-gap:2.4rem;
+}
+.name-list li{
+  break-inside:avoid;
+  margin-bottom:0;
+  padding:0.32rem 0;
+  border-bottom:1px dotted rgba(201,162,39,0.18);
+  color:var(--parchment-2);
+  font-family:'IM Fell English', serif;
+  font-size:1.03rem;
+}
+@media (max-width:640px){ .name-list{ columns:1; } }
+
 /* ---------- Dungeon Map generator ---------- */
 .map-panel{
   margin-top:1.8rem;
@@ -450,7 +466,7 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
     position:absolute; top:0; left:0; width:100%;
     background:#fff; color:#171310; padding:0.1in;
   }
-  #print-area h1{
+  #print-area h1, #print-area h2{
     font-family:'IM Fell English SC', serif;
     font-size:1.5rem; margin:0 0 0.2rem;
   }
