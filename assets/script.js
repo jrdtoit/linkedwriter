@@ -122,6 +122,34 @@ function genRace(){
   render(list, out);
 }
 
+
+/* ---------------- Dwarf Clan Names ---------------- */
+const dwarfFirst = { male:['Alberic','Andvar','Barek','Bramdur','Dorgan','Durik','Eberk','Falgrim','Garek','Halvard','Harbek','Jorik','Keldor','Korvin','Magnar','Norbek','Orsik','Rurik','Skarn','Thorek','Torvald','Ulfgar','Vegard','Yorik'], female:['Astrid','Brynna','Dagmar','Dagna','Elska','Freydis','Gerda','Gudrun','Helga','Hilda','Inger','Jorunn','Kara','Kelda','Liv','Magna','Norra','Ragnhild','Runa','Sigrid','Solveig','Thora','Torhild','Yrsa'] };
+const dwarfClan = {
+  mountain: { pre:['Iron','Stone','Granite','High','Storm','Frost','Thunder','Crag','Onyx','Basalt','Slate','Ridge','Cliff','Summit','Boulder','Quartz','Flint','Raven','Ember'], suf:['mantle','peak','guard','hold','helm','shield','brow','crest','watch','born','delver','spine','fall','gate','fist'] },
+  hill: { pre:['Copper','Bronze','Moss','Fern','Heather','Barley','Amber','Clay','Briar','Hazel','Orchard','Meadow','Burrow','Tumble','Green','Clover','Miller','Wool','Honey'], suf:['hill','burrow','field','brook','hollow','gate','foot','hearth','mound','dell','bottom','top','shaw','combe','gard'] },
+  craft: { pre:['Gold','Silver','Copper','Steel','Ember','Forge','Anvil','Coal','Gem','Ruby','Sapphire','Ore','Vein','Bright','Star','Deep','Iron','Tin','Jewel'], suf:['hammer','forge','anvil','fist','smith','song','spark','flame','brand','hand','work','vein','beard','delve','wright','glow'] },
+  battle: { pre:['War','Battle','Blood','Doom','Grim','Wolf','Bear','Raven','Oath','Wrath','Thunder','Storm','Red','Black','Grudge','Iron','Stone'], suf:['axe','shield','guard','breaker','bane','sworn','heart','fist','maul','rend','watch','born','helm','song','fall','grip'] },
+  deep: { pre:['Dark','Deep','Night','Shadow','Gloom','Silent','Pale','Ashen','Hollow','Dusk','Mourn','Obsidian','Black','Umbral','Fathom','Grave','Sable','Dread','Far'], suf:['delver','deep','shadow','gaze','whisper','mantle','born','walker','forge','hold','eye','sworn','mark','vein','gate','fall'] }
+};
+function genDwarf(){
+  const kindSel = document.getElementById('dwarf-kind').value;
+  const style = document.getElementById('dwarf-style').value;
+  const n = +document.getElementById('dwarf-count').value;
+  const list = document.getElementById('dwarf-results');
+  const out = [];
+  for(let i=0;i<n;i++){
+    const key = kindSel==='any' ? pick(['mountain','hill','craft','battle','deep']) : kindSel;
+    const b = dwarfClan[key];
+    const clan = pick(b.pre) + pick(b.suf);
+    if(style==='full'){
+      const first = pick(Math.random()<0.5 ? dwarfFirst.male : dwarfFirst.female);
+      out.push(`${first} ${clan}`);
+    } else out.push(clan);
+  }
+  render(list, out);
+}
+
 /* =================================================================
    DUNGEON MAP GENERATOR
    ================================================================= */
