@@ -478,3 +478,6 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   @page{ margin:0.4in; }
 }
 
+
+/* ---------- Homepage hero art (decorative inline SVG) ---------- */
+.hero-art{ display:block; width:100%; height:auto; margin-top:1.4rem; }
