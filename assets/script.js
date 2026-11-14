@@ -150,6 +150,29 @@ function genDwarf(){
   render(list, out);
 }
 
+
+/* ---------------- Fantasy Town Names ---------------- */
+const townData = {
+  coastal: { pre:['Gull','Brine','Salt','Tide','Pearl','Coral','Shell','Wave','Sail','Anchor','Kelp','Foam','Mist','Beacon','Cormorant','Harbour','Drift','Shingle','Wreck'], suf:['haven','port','bay','shore','watch','light','mouth','cove','strand','reach','dock','harbour','rest','market'] },
+  mountain: { pre:['Stone','High','Crag','Frost','Pine','Eagle','Iron','Granite','Summit','Cliff','Snow','Goat','Thunder','Vale','Slate','Ridge'], suf:['hold','peak','pass','gate','watch','rest','fall','crest','spire','hollow','ford','haven'] },
+  forest: { pre:['Oak','Elm','Ash','Willow','Fern','Moss','Thorn','Briar','Stag','Owl','Fox','Birch','Hazel','Wolf','Green','Elder','Rowan','Night'], suf:['wood','glade','hollow','ford','dell','grove','thorp','ham','bury','fall','watch','shaw','ley'] },
+  desert: { pre:['Sun','Sand','Dune','Mirage','Amber','Dust','Ember','Scorpion','Vulture','Palm','Red','Dry','Gold','Salt','Thirst','Copper'], suf:['well','wells','rest','gate','watch','market','shade','reach','stones','hollow','crossing','basin'] },
+  river: { pre:['Cross','Market','Mill','Ferry','Twin','Fair','Gold','Merchant','Wheel','Barley','Stone','Kings','Low','Swift','Alder','Poplar'], suf:['ford','bridge','market','cross','ferry','mill','falls','gate','field','landing','water','brook'] },
+  dark: { pre:['Grave','Night','Dusk','Mourn','Hollow','Ash','Raven','Wolf','Thorn','Black','Pale','Silent','Grim','Widow','Barrow','Cinder'], suf:['moor','hollow','fen','gate','watch','reach','fall','barrow','shroud','mere','pit','marsh'] }
+};
+function genTown(){
+  const styleSel = document.getElementById('town-style').value;
+  const n = +document.getElementById('town-count').value;
+  const list = document.getElementById('town-results');
+  const out = [];
+  for(let i=0;i<n;i++){
+    const key = styleSel==='any' ? pick(['coastal','mountain','forest','desert','river','dark']) : styleSel;
+    const b = townData[key];
+    out.push(pick(b.pre) + pick(b.suf));
+  }
+  render(list, out);
+}
+
 /* =================================================================
    DUNGEON MAP GENERATOR
    ================================================================= */
